@@ -115,6 +115,12 @@ const Register = () => {
 
           {userType === "student" && (
             <>
+            <select name="branch" className="input-field" onChange={handleChange} required>
+              <option value="">Select Branch</option>
+              {departments.map((dept) => (
+                <option key={dept} value={dept}>{dept}</option>
+              ))}
+            </select>
               <select name="year" className="input-field" onChange={handleChange} required>
                 <option value="">Select Year</option>
                 <option value="FY">FY</option>
@@ -143,12 +149,7 @@ const Register = () => {
 
               <input type="text" name="roll_number" placeholder="Roll Number" className="input-field" onChange={handleChange} required />
 
-              <select name="branch" className="input-field" onChange={handleChange} required>
-                <option value="">Select Branch</option>
-                {departments.map((dept) => (
-                  <option key={dept} value={dept}>{dept}</option>
-                ))}
-              </select>
+
             </>
           )}
 
