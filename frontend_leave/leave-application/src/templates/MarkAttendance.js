@@ -319,7 +319,7 @@ const MarkAttendance = () => {
                 <thead>
                   <tr>
                     <th>Roll Number</th>
-                    <th>Name</th>
+                    <th>Full Name</th>
                     <th>Attendance</th>
                   </tr>
                 </thead>
@@ -327,11 +327,13 @@ const MarkAttendance = () => {
                   {filteredStudents.map((student) => (
                     <tr key={student.roll_number}>
                       <td>{student.roll_number}</td>
-                      <td>{student.name}</td>
+                      <td>{student.full_name}</td>
                       <td>
                         <select
-                          value={attendance[student.roll_number]}
-                          onChange={(e) => handleAttendanceChange(student.roll_number, e.target.value)}
+                          value={attendance[student.roll_number] || "Present"}
+                          onChange={(e) =>
+                            handleAttendanceChange(student.roll_number, e.target.value)
+                          }
                         >
                           <option value="Present">Present</option>
                           <option value="Absent">Absent</option>
@@ -341,14 +343,14 @@ const MarkAttendance = () => {
                   ))}
                 </tbody>
               </table>
+              <button className="submit-btn" onClick={handleSubmit} disabled={isSubmitting}>
+                {editMode ? "Update Attendance" : "Submit Attendance"}
+              </button>
             </div>
           )}
 
-          {/* Submit Button */}
-          <button onClick={handleSubmit} disabled={isSubmitting}>
-            {isSubmitting ? "Submitting..." : "Submit Attendance"}
-          </button>
-
+          {/* Optional Error Display */}
+          {error && <div className="error-message">{error}</div>}
         </div>
       </div>
     </div>
