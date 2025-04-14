@@ -25,9 +25,9 @@ const MarkAttendance = () => {
 
   const divisionsFY = ["A", "B", "C", "D", "E", "F"];
   const branches = ["Computer", "IT", "Mechanical", "ENTC"];
-  const divisionsSY = ["S1", "S2", "S3"];
-  const divisionsTY = ["T1", "T2", "T3"];
-  const divisionsBE = ["B1", "B2", "B3"];
+  const divisionsSY = ["A", "B"];
+  const divisionsTY = ["A", "B"];
+  const divisionsBE = ["A", "B"];
 
   const accessToken = localStorage.getItem("access_token");
 
