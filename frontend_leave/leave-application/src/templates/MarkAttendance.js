@@ -40,10 +40,10 @@ const MarkAttendance = () => {
       try {
         const token = localStorage.getItem("access_token");
         const response = await axios.get(
-          `https://leave-management-backend-8.onrender.com/api/get_students/?year=${year}&division=${division}&batch=${batch}&session_type=${sessionType}&branch=${branch}`,
+          https://leave-management-backend-8.onrender.com/api/get_students/?year=${year}&division=${division}&batch=${batch}&session_type=${sessionType}&branch=${branch},
           {
             headers: {
-              Authorization: `Bearer ${token}`, // ✅ This is the correct format for JWT
+              Authorization: Bearer ${token}, // ✅ This is the correct format for JWT
             },
           }
         );
@@ -140,7 +140,7 @@ const MarkAttendance = () => {
       setIsSubmitting(true);
       const response = await axios.post("https://leave-management-backend-8.onrender.com/api/mark_attendance/", requestData, {
         headers: {
-          Authorization: `Bearer ${accessToken}`,
+          Authorization: Bearer ${accessToken},
           "Content-Type": "application/json",
         },
       });
@@ -305,9 +305,9 @@ const MarkAttendance = () => {
               <label>Batch:</label>
               <select value={batch} onChange={(e) => setBatch(e.target.value)}>
                 <option value="">Select</option>
-                <option value={`${division}1`}>{division}1</option>
-                <option value={`${division}2`}>{division}2</option>
-                <option value={`${division}3`}>{division}3</option>
+                <option value={${division}1}>{division}1</option>
+                <option value={${division}2}>{division}2</option>
+                <option value={${division}3}>{division}3</option>
               </select>
             </div>
           )}
@@ -319,7 +319,7 @@ const MarkAttendance = () => {
                 <thead>
                   <tr>
                     <th>Roll Number</th>
-                    <th>Full Name</th>
+                    <th>Name</th>
                     <th>Attendance</th>
                   </tr>
                 </thead>
@@ -327,13 +327,11 @@ const MarkAttendance = () => {
                   {filteredStudents.map((student) => (
                     <tr key={student.roll_number}>
                       <td>{student.roll_number}</td>
-                      <td>{student.full_name}</td>
+                      <td>{student.name}</td>
                       <td>
                         <select
-                          value={attendance[student.roll_number] || "Present"}
-                          onChange={(e) =>
-                            handleAttendanceChange(student.roll_number, e.target.value)
-                          }
+                          value={attendance[student.roll_number]}
+                          onChange={(e) => handleAttendanceChange(student.roll_number, e.target.value)}
                         >
                           <option value="Present">Present</option>
                           <option value="Absent">Absent</option>
@@ -343,14 +341,14 @@ const MarkAttendance = () => {
                   ))}
                 </tbody>
               </table>
-              <button className="submit-btn" onClick={handleSubmit} disabled={isSubmitting}>
-                {editMode ? "Update Attendance" : "Submit Attendance"}
-              </button>
             </div>
           )}
 
-          {/* Optional Error Display */}
-          {error && <div className="error-message">{error}</div>}
+          {/* Submit Button */}
+          <button onClick={handleSubmit} disabled={isSubmitting}>
+            {isSubmitting ? "Submitting..." : "Submit Attendance"}
+          </button>
+
         </div>
       </div>
     </div>
