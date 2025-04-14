@@ -9,6 +9,7 @@ import YourLeaves from "./templates/YourLeaves";
 import Profile from "./templates/Profile";
 import MarkAttendance from "./templates/MarkAttendance";
 import ViewAttendance from "./templates/ViewAttendance"
+import ResetPassword from "./templates/ResetPassword";  
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/teacher_dashboard" element={<TeacherDashboard />} />
         <Route path="/mark-attendance" element={<MarkAttendance />} />
         <Route path="/view-attendance" element={<ViewAttendance />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
 
 
       </Routes>
