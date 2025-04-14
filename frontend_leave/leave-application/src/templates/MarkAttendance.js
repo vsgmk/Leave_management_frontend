@@ -43,7 +43,7 @@ const MarkAttendance = () => {
           https://leave-management-backend-8.onrender.com/api/get_students/?year=${year}&division=${division}&batch=${batch}&session_type=${sessionType}&branch=${branch},
           {
             headers: {
-              Authorization: Bearer ${token}, // ✅ This is the correct format for JWT
+              Authorization: `Bearer ${token}`, // ✅ This is the correct format for JWT
             },
           }
         );
