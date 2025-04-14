@@ -24,7 +24,7 @@ export const verifyOTP = async (otpData) => {
 
 // 🔹 Student Login
 export const loginStudent = async (credentials) => {
-  return axios.post("http://127.0.0.1:8000/api/login/student/", credentials);
+  return axios.post(`${BASE_URL}/api/login/student/`, credentials);
 };
 
 // 🔹 Teacher Login
