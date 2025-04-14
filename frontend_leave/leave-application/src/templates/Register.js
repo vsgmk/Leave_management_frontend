@@ -155,6 +155,9 @@ const Register = () => {
           <button type="submit" className="register-button">
             Register
           </button>
+          <p style={{ marginTop: "10px" }}>
+            Already registered? <span style={{ color: "blue", cursor: "pointer", textDecoration: "underline" }} onClick={() => navigate("/login")}>Login here</span>
+          </p>
         </form>
       </div>
     </div>
