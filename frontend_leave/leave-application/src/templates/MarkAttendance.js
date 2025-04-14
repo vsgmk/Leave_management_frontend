@@ -24,7 +24,7 @@ const MarkAttendance = () => {
   const [editMode, setEditMode] = useState(false);
 
   const divisionsFY = ["A", "B", "C", "D", "E", "F"];
-  const branches = ["Computer", "IT", "Mechanical", "ENTC"];
+  const branches = ["Computer ", "IT", "Mechanical", "ENTC"];
   const divisionsSY = ["A", "B"];
   const divisionsTY = ["A", "B"];
   const divisionsBE = ["A", "B"];
