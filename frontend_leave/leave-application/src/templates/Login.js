@@ -80,6 +80,23 @@ const Login = () => {
             required
           />
           <button type="submit" className="login-button">Login</button>
+          <p style={{ marginTop: "10px", marginBottom: "10px" }}>
+            Not registered{" "}
+            <span
+              style={{ color: "blue", cursor: "pointer", textDecoration: "underline" }}
+              onClick={() => navigate("/register")}
+            >
+              Register here
+            </span>{" "}
+            |{" "}
+            <span
+              style={{ color: "blue", cursor: "pointer", textDecoration: "underline" }}
+              onClick={() => navigate("/reset-password")}
+            >
+              Forgot Password?
+            </span>
+          </p>
+          
         </form>
       </div>
     </div>
