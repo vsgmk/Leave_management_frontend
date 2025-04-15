@@ -140,7 +140,7 @@ const MarkAttendance = () => {
       setIsSubmitting(true);
       const response = await axios.post("https://leave-management-backend-8.onrender.com/api/mark_attendance/", requestData, {
         headers: {
-          Authorization: Bearer ${accessToken},
+          Authorization:  `Bearer ${accessToken}`,
           "Content-Type": "application/json",
         },
       });
