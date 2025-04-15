@@ -40,7 +40,7 @@ const MarkAttendance = () => {
       try {
         const token = localStorage.getItem("access_token");
         const response = await axios.get(
-          https://leave-management-backend-8.onrender.com/api/get_students/?year=${year}&division=${division}&batch=${batch}&session_type=${sessionType}&branch=${branch},
+          `https://leave-management-backend-8.onrender.com/api/get_students/?year=${year}&division=${division}&batch=${batch}&session_type=${sessionType}&branch=${branch}`,
           {
             headers: {
               Authorization: `Bearer ${accessToken}`, // ✅ This is the correct format for JWT
@@ -305,9 +305,9 @@ const MarkAttendance = () => {
               <label>Batch:</label>
               <select value={batch} onChange={(e) => setBatch(e.target.value)}>
                 <option value="">Select</option>
-                <option value={${division}1}>{division}1</option>
-                <option value={${division}2}>{division}2</option>
-                <option value={${division}3}>{division}3</option>
+                <option value={`${division}1`}>{division}1</option>
+                <option value={`${division}2`}>{division}2</option>
+                <option value={`${division}3`}>{division}3</option>
               </select>
             </div>
           )}
@@ -318,9 +318,9 @@ const MarkAttendance = () => {
               <table>
                 <thead>
                   <tr>
-                    <th>Roll Number</th>
-                    <th>Full Name</th>
-                    <th>Attendance</th>
+                    <th>Roll No</th>
+                    <th>Name</th>
+                    <th>Status</th>
                   </tr>
                 </thead>
                 <tbody>
